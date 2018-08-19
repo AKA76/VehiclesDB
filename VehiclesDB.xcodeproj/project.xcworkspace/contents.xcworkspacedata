@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:VehicleDB.xcodeproj">
+      location = "self:/Users/aka/Documents/XCode/LessonsPractise/VehiclesDB/VehiclesDB.xcodeproj">
    </FileRef>
 </Workspace>

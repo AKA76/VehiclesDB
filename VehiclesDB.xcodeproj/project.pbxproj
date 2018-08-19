@@ -8,20 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		415752B62128B768005FCF18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752B52128B768005FCF18 /* AppDelegate.swift */; };
-		415752B82128B768005FCF18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752B72128B768005FCF18 /* ViewController.swift */; };
+		415752B82128B768005FCF18 /* VehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752B72128B768005FCF18 /* VehicleViewController.swift */; };
 		415752BB2128B768005FCF18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415752B92128B768005FCF18 /* Main.storyboard */; };
 		415752BD2128B76D005FCF18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 415752BC2128B76D005FCF18 /* Assets.xcassets */; };
 		415752C02128B76D005FCF18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415752BE2128B76D005FCF18 /* LaunchScreen.storyboard */; };
+		415752CB2128D09D005FCF18 /* AKVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752CA2128D09D005FCF18 /* AKVehicle.swift */; };
+		415752CD2128D1A1005FCF18 /* AKBike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752CC2128D1A1005FCF18 /* AKBike.swift */; };
+		415752CF2128D224005FCF18 /* AKAutomobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752CE2128D224005FCF18 /* AKAutomobile.swift */; };
+		415752D12128D2B6005FCF18 /* AKTruck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752D02128D2B6005FCF18 /* AKTruck.swift */; };
+		415752D32128D32B005FCF18 /* AKCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752D22128D32B005FCF18 /* AKCar.swift */; };
+		415752D52128D52F005FCF18 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 415752D42128D52F005FCF18 /* Default-568h@2x.png */; };
+		73FBF34C81BABBB757F19092 /* Pods_VehiclesDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C8CA44C05A6F8DD84259FC /* Pods_VehiclesDB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		415752B22128B768005FCF18 /* VehicleDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		399EA3588092672AE2DA963A /* Pods-VehiclesDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VehiclesDB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VehiclesDB/Pods-VehiclesDB.debug.xcconfig"; sourceTree = "<group>"; };
+		415752B22128B768005FCF18 /* VehiclesDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehiclesDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		415752B52128B768005FCF18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		415752B72128B768005FCF18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		415752B72128B768005FCF18 /* VehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewController.swift; sourceTree = "<group>"; };
 		415752BA2128B768005FCF18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		415752BC2128B76D005FCF18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		415752BF2128B76D005FCF18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		415752C12128B76D005FCF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		415752CA2128D09D005FCF18 /* AKVehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKVehicle.swift; sourceTree = "<group>"; };
+		415752CC2128D1A1005FCF18 /* AKBike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBike.swift; sourceTree = "<group>"; };
+		415752CE2128D224005FCF18 /* AKAutomobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKAutomobile.swift; sourceTree = "<group>"; };
+		415752D02128D2B6005FCF18 /* AKTruck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKTruck.swift; sourceTree = "<group>"; };
+		415752D22128D32B005FCF18 /* AKCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCar.swift; sourceTree = "<group>"; };
+		415752D42128D52F005FCF18 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		84C8CA44C05A6F8DD84259FC /* Pods_VehiclesDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VehiclesDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8A0D791361EE2CC0F01C77A /* Pods-VehiclesDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VehiclesDB.release.xcconfig"; path = "Pods/Target Support Files/Pods-VehiclesDB/Pods-VehiclesDB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,59 +45,111 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73FBF34C81BABBB757F19092 /* Pods_VehiclesDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FBAAE1458217376C5A87360 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				399EA3588092672AE2DA963A /* Pods-VehiclesDB.debug.xcconfig */,
+				F8A0D791361EE2CC0F01C77A /* Pods-VehiclesDB.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		415752A92128B768005FCF18 = {
 			isa = PBXGroup;
 			children = (
-				415752B42128B768005FCF18 /* VehicleDB */,
+				415752D42128D52F005FCF18 /* Default-568h@2x.png */,
+				415752B42128B768005FCF18 /* VehiclesDB */,
 				415752B32128B768005FCF18 /* Products */,
+				2FBAAE1458217376C5A87360 /* Pods */,
+				9B7141A7EE0EF717487EAD68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		415752B32128B768005FCF18 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				415752B22128B768005FCF18 /* VehicleDB.app */,
+				415752B22128B768005FCF18 /* VehiclesDB.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		415752B42128B768005FCF18 /* VehicleDB */ = {
+		415752B42128B768005FCF18 /* VehiclesDB */ = {
+			isa = PBXGroup;
+			children = (
+				415752C82128B89D005FCF18 /* Model */,
+				415752C72128B892005FCF18 /* View */,
+				415752C92128B8A7005FCF18 /* Controller */,
+				415752BC2128B76D005FCF18 /* Assets.xcassets */,
+				415752C12128B76D005FCF18 /* Info.plist */,
+			);
+			path = VehiclesDB;
+			sourceTree = "<group>";
+		};
+		415752C72128B892005FCF18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				415752B92128B768005FCF18 /* Main.storyboard */,
+				415752BE2128B76D005FCF18 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		415752C82128B89D005FCF18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				415752CA2128D09D005FCF18 /* AKVehicle.swift */,
+				415752CC2128D1A1005FCF18 /* AKBike.swift */,
+				415752CE2128D224005FCF18 /* AKAutomobile.swift */,
+				415752D02128D2B6005FCF18 /* AKTruck.swift */,
+				415752D22128D32B005FCF18 /* AKCar.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		415752C92128B8A7005FCF18 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				415752B52128B768005FCF18 /* AppDelegate.swift */,
-				415752B72128B768005FCF18 /* ViewController.swift */,
-				415752B92128B768005FCF18 /* Main.storyboard */,
-				415752BC2128B76D005FCF18 /* Assets.xcassets */,
-				415752BE2128B76D005FCF18 /* LaunchScreen.storyboard */,
-				415752C12128B76D005FCF18 /* Info.plist */,
+				415752B72128B768005FCF18 /* VehicleViewController.swift */,
 			);
-			path = VehicleDB;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9B7141A7EE0EF717487EAD68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84C8CA44C05A6F8DD84259FC /* Pods_VehiclesDB.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		415752B12128B768005FCF18 /* VehicleDB */ = {
+		415752B12128B768005FCF18 /* VehiclesDB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 415752C42128B76D005FCF18 /* Build configuration list for PBXNativeTarget "VehicleDB" */;
+			buildConfigurationList = 415752C42128B76D005FCF18 /* Build configuration list for PBXNativeTarget "VehiclesDB" */;
 			buildPhases = (
+				CB91B02150FABFABC6E4B351 /* [CP] Check Pods Manifest.lock */,
 				415752AE2128B768005FCF18 /* Sources */,
 				415752AF2128B768005FCF18 /* Frameworks */,
 				415752B02128B768005FCF18 /* Resources */,
+				3B85BEE112F4A4D4A52EC2D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = VehicleDB;
+			name = VehiclesDB;
 			productName = VehicleDB;
-			productReference = 415752B22128B768005FCF18 /* VehicleDB.app */;
+			productReference = 415752B22128B768005FCF18 /* VehiclesDB.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -90,6 +158,7 @@
 		415752AA2128B768005FCF18 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = AK;
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = AK;
@@ -99,7 +168,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 415752AD2128B768005FCF18 /* Build configuration list for PBXProject "VehicleDB" */;
+			buildConfigurationList = 415752AD2128B768005FCF18 /* Build configuration list for PBXProject "VehiclesDB" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +181,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				415752B12128B768005FCF18 /* VehicleDB */,
+				415752B12128B768005FCF18 /* VehiclesDB */,
 			);
 		};
 /* End PBXProject section */
@@ -123,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				415752C02128B76D005FCF18 /* LaunchScreen.storyboard in Resources */,
+				415752D52128D52F005FCF18 /* Default-568h@2x.png in Resources */,
 				415752BD2128B76D005FCF18 /* Assets.xcassets in Resources */,
 				415752BB2128B768005FCF18 /* Main.storyboard in Resources */,
 			);
@@ -130,13 +200,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3B85BEE112F4A4D4A52EC2D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VehiclesDB/Pods-VehiclesDB-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VehiclesDB/Pods-VehiclesDB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB91B02150FABFABC6E4B351 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VehiclesDB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		415752AE2128B768005FCF18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				415752B82128B768005FCF18 /* ViewController.swift in Sources */,
+				415752B82128B768005FCF18 /* VehicleViewController.swift in Sources */,
+				415752CB2128D09D005FCF18 /* AKVehicle.swift in Sources */,
+				415752CD2128D1A1005FCF18 /* AKBike.swift in Sources */,
+				415752D12128D2B6005FCF18 /* AKTruck.swift in Sources */,
+				415752CF2128D224005FCF18 /* AKAutomobile.swift in Sources */,
 				415752B62128B768005FCF18 /* AppDelegate.swift in Sources */,
+				415752D32128D32B005FCF18 /* AKCar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,44 +394,46 @@
 		};
 		415752C52128B76D005FCF18 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 399EA3588092672AE2DA963A /* Pods-VehiclesDB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XSD548XWQ4;
-				INFOPLIST_FILE = VehicleDB/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/VehiclesDB/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.home.VehicleDB;
+				PRODUCT_BUNDLE_IDENTIFIER = net.home.VehiclesDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		415752C62128B76D005FCF18 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8A0D791361EE2CC0F01C77A /* Pods-VehiclesDB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XSD548XWQ4;
-				INFOPLIST_FILE = VehicleDB/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/VehiclesDB/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.home.VehicleDB;
+				PRODUCT_BUNDLE_IDENTIFIER = net.home.VehiclesDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		415752AD2128B768005FCF18 /* Build configuration list for PBXProject "VehicleDB" */ = {
+		415752AD2128B768005FCF18 /* Build configuration list for PBXProject "VehiclesDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				415752C22128B76D005FCF18 /* Debug */,
@@ -324,7 +442,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		415752C42128B76D005FCF18 /* Build configuration list for PBXNativeTarget "VehicleDB" */ = {
+		415752C42128B76D005FCF18 /* Build configuration list for PBXNativeTarget "VehiclesDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				415752C52128B76D005FCF18 /* Debug */,

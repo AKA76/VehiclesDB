@@ -18,6 +18,7 @@ class VehicleViewController: UITableViewController {
     var trucksArray = [AKTruck]()
     var carsArray = [AKCar]()
     let VEHICLESDB_URL = "http://azcltd.com/testTask/iOS/list.json"
+    let VEHICLESIMG_URL = "http://azcltd.com/testTask/iOS/"
     
 
     override func viewDidLoad() {
@@ -180,10 +181,22 @@ class VehicleViewController: UITableViewController {
             return sourceIndexPath
         }
     }
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-       return .none
-    }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            switch (indexPath.section) {
+            case 0:
+                trucksArray.remove(at: indexPath.row)
+            case 1:
+                carsArray.remove(at: indexPath.row)
+            default:
+                bikesArray.remove(at: indexPath.row)
+            }
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
+            tableView.endUpdates()
+        }
+    }
     override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
     }

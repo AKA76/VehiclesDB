@@ -54,11 +54,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="VehiclesDB" id="bbQ-QC-LsJ">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" style="done" id="58C-re-LRY">
-                            <connections>
-                                <action selector="editVehicleList:" destination="eKg-YC-nu9" id="ED4-cz-MIV"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="add" id="58C-re-LRY"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyc-fR-P2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -87,7 +83,6 @@
                                                 <action selector="backButtonPressed:" destination="0I4-5G-E9c" id="wkJ-nh-Y4Q"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="3T7-Uy-OkB"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -98,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3at-w2-IeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861" y="134"/>
+            <point key="canvasLocation" x="1860" y="133.5832083958021"/>
         </scene>
         <!--VehiclesDB-->
         <scene sceneID="lOa-vF-oNX">

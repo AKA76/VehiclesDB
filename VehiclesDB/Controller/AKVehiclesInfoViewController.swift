@@ -12,6 +12,7 @@ class AKVehiclesInfoViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
 
     }
 

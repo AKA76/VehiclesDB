@@ -24,6 +24,7 @@ class VehicleViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.isEditing = false
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         if !isDataImported {
             print("Importing ...")
             getVehiclesData(url:VEHICLESDB_URL)
@@ -37,16 +38,7 @@ class VehicleViewController: UITableViewController {
 
     }
     //MARK: - NavigationBarButton
-    @IBAction func editVehicleList(_ sender: Any) {
-        
-        if self.tableView.isEditing {
-            self.tableView.isEditing = false
-            self.navigationItem.rightBarButtonItem?.title="Edit"
-        }else{
-            self.tableView.isEditing = true
-            self.navigationItem.rightBarButtonItem?.title="Done"
-        }
-    }
+    
     //MARK: - Networking
     func getVehiclesData(url:(String)) {
         Alamofire.request(url, method: .get, parameters: nil).responseJSON {

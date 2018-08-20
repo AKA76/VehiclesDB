@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class VehicleViewController: UITableViewController {
     
-    var isImportedData : Bool = false
+    var isDataImported : Bool = false
     var itemArray = ["Trucks", "Cars", "Bikes"]
     var bikesArray = [AKBike]()
     var trucksArray = [AKTruck]()
@@ -23,7 +23,7 @@ class VehicleViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.isEditing = false
-        if !isImportedData {
+        if !isDataImported {
             print("Importing ...")
             getVehiclesData(url:VEHICLESDB_URL)
         }else {
@@ -35,8 +35,16 @@ class VehicleViewController: UITableViewController {
         super.didReceiveMemoryWarning()
 
     }
+    //MARK: - NavigationBarButton
     @IBAction func editVehicleList(_ sender: Any) {
-        self.tableView.isEditing = true
+        
+        if self.tableView.isEditing {
+            self.tableView.isEditing = false
+            self.navigationItem.rightBarButtonItem?.title="Edit"
+        }else{
+            self.tableView.isEditing = true
+            self.navigationItem.rightBarButtonItem?.title="Done"
+        }
     }
     //MARK: - Networking
     func getVehiclesData(url:(String)) {
@@ -46,12 +54,13 @@ class VehicleViewController: UITableViewController {
                 print("Success! The vehicle data was got.")
                 let vehiclesJSON : JSON = JSON(response.result.value!)
                 self.updateVehiclesData(json: vehiclesJSON)
-                self.isImportedData = true
+                self.isDataImported = true
             }else{
                 print ("Connections Issues.\nError \(String(describing: response.result.error))")
             }
         }
     }
+    
     //MARK: - JSON Parsing
     func updateVehiclesData(json: JSON){
         let vehiclesArray = json["vehicles"]
@@ -97,12 +106,11 @@ class VehicleViewController: UITableViewController {
 
             
             default:
-                print("wrong vehicle type")
+                print("Wrong vehicle type")
             }
         }
         self.tableView.reloadData()
     }
-    
     
     //MARK : - TableView Datasource Methods
     override func numberOfSections(in tableView: UITableView) -> Int {

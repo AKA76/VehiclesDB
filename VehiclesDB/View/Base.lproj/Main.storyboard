@@ -54,7 +54,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="VehiclesDB" id="bbQ-QC-LsJ">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="58C-re-LRY">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" style="done" id="58C-re-LRY">
                             <connections>
                                 <action selector="editVehicleList:" destination="eKg-YC-nu9" id="ED4-cz-MIV"/>
                             </connections>

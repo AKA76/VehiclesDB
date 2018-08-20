@@ -19,9 +19,10 @@ class VehicleViewController: UITableViewController {
     var carsArray = [AKCar]()
     let VEHICLESDB_URL = "http://azcltd.com/testTask/iOS/list.json"
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.isEditing = false
         if !isImportedData {
             print("Importing ...")
             getVehiclesData(url:VEHICLESDB_URL)
@@ -33,6 +34,9 @@ class VehicleViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
+    }
+    @IBAction func editVehicleList(_ sender: Any) {
+        self.tableView.isEditing = true
     }
     //MARK: - Networking
     func getVehiclesData(url:(String)) {
@@ -98,6 +102,8 @@ class VehicleViewController: UITableViewController {
         }
         self.tableView.reloadData()
     }
+    
+    
     //MARK : - TableView Datasource Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
         return itemArray.count
@@ -138,5 +144,41 @@ class VehicleViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        
+        return true
+    }
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+
+    }
+    override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        if sourceIndexPath.section == proposedDestinationIndexPath.section {
+            switch (sourceIndexPath.section) {
+            case 0:
+                let movedObject = self.trucksArray[sourceIndexPath.row]
+                trucksArray.remove(at: proposedDestinationIndexPath.row)
+                trucksArray.insert(movedObject, at: proposedDestinationIndexPath.row)
+            case 1:
+                let movedObject = self.carsArray[sourceIndexPath.row]
+                carsArray.remove(at: proposedDestinationIndexPath.row)
+                carsArray.insert(movedObject, at: proposedDestinationIndexPath.row)
+            default:
+                let movedObject = self.bikesArray[sourceIndexPath.row]
+                bikesArray.remove(at: proposedDestinationIndexPath.row)
+                bikesArray.insert(movedObject, at: proposedDestinationIndexPath.row)
+            }
+            return proposedDestinationIndexPath
+        } else {
+            return sourceIndexPath
+        }
+    }
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+       return .none
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
 }
 

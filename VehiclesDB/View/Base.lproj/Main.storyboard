@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VehiclesItemCell" textLabel="JL1-Sd-CWF" detailTextLabel="xs0-7n-1bu" rowHeight="61" style="IBUITableViewCellStyleSubtitle" id="nnH-7h-mER">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="VehiclesItemCell" textLabel="JL1-Sd-CWF" detailTextLabel="xs0-7n-1bu" rowHeight="61" style="IBUITableViewCellStyleSubtitle" id="nnH-7h-mER">
                                 <rect key="frame" x="0.0" y="28" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nnH-7h-mER" id="tn4-fA-hTL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="60.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JL1-Sd-CWF">
@@ -53,16 +53,21 @@
                             <outlet property="delegate" destination="eKg-YC-nu9" id="W2Q-fq-NpK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="VehiclesDB" id="bbQ-QC-LsJ"/>
+                    <navigationItem key="navigationItem" title="VehiclesDB" id="bbQ-QC-LsJ">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="58C-re-LRY">
+                            <connections>
+                                <action selector="editVehicleList:" destination="eKg-YC-nu9" id="ED4-cz-MIV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyc-fR-P2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1346" y="134"/>
+            <point key="canvasLocation" x="1111" y="134"/>
         </scene>
         <!--VehiclesInfoView-->
         <scene sceneID="XAW-DB-EDm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3at-w2-IeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="0I4-5G-E9c" userLabel="VehiclesInfoView" customClass="AKVehiclesInfoViewController" customModule="VehiclesDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QyA-AA-9hu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -77,12 +82,12 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Vehicle Information" id="a4O-FJ-hw4">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="left" id="JVx-js-z3d">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="left" style="done" id="JVx-js-z3d">
                                             <connections>
                                                 <action selector="backButtonPressed:" destination="0I4-5G-E9c" id="wkJ-nh-Y4Q"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="3T7-Uy-OkB"/>
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="3T7-Uy-OkB"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -91,8 +96,9 @@
                         <viewLayoutGuide key="safeArea" id="I5v-NK-hqA"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3at-w2-IeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2054" y="134"/>
+            <point key="canvasLocation" x="1861" y="134"/>
         </scene>
         <!--VehiclesDB-->
         <scene sceneID="lOa-vF-oNX">
@@ -114,7 +120,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2A-AH-8Rt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816.79999999999995" y="133.5832083958021"/>
+            <point key="canvasLocation" x="329" y="134"/>
         </scene>
     </scenes>
     <resources>

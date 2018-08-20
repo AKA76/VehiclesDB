@@ -18,6 +18,7 @@
 		415752D12128D2B6005FCF18 /* AKTruck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752D02128D2B6005FCF18 /* AKTruck.swift */; };
 		415752D32128D32B005FCF18 /* AKCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752D22128D32B005FCF18 /* AKCar.swift */; };
 		415752D52128D52F005FCF18 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 415752D42128D52F005FCF18 /* Default-568h@2x.png */; };
+		415752D7212A3268005FCF18 /* AKVehiclesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752D6212A3268005FCF18 /* AKVehiclesInfoViewController.swift */; };
 		73FBF34C81BABBB757F19092 /* Pods_VehiclesDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C8CA44C05A6F8DD84259FC /* Pods_VehiclesDB.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		415752D02128D2B6005FCF18 /* AKTruck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKTruck.swift; sourceTree = "<group>"; };
 		415752D22128D32B005FCF18 /* AKCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCar.swift; sourceTree = "<group>"; };
 		415752D42128D52F005FCF18 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		415752D6212A3268005FCF18 /* AKVehiclesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKVehiclesInfoViewController.swift; sourceTree = "<group>"; };
 		84C8CA44C05A6F8DD84259FC /* Pods_VehiclesDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VehiclesDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A0D791361EE2CC0F01C77A /* Pods-VehiclesDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VehiclesDB.release.xcconfig"; path = "Pods/Target Support Files/Pods-VehiclesDB/Pods-VehiclesDB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 			children = (
 				415752B52128B768005FCF18 /* AppDelegate.swift */,
 				415752B72128B768005FCF18 /* VehicleViewController.swift */,
+				415752D6212A3268005FCF18 /* AKVehiclesInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				415752B82128B768005FCF18 /* VehicleViewController.swift in Sources */,
 				415752CB2128D09D005FCF18 /* AKVehicle.swift in Sources */,
 				415752CD2128D1A1005FCF18 /* AKBike.swift in Sources */,
+				415752D7212A3268005FCF18 /* AKVehiclesInfoViewController.swift in Sources */,
 				415752D12128D2B6005FCF18 /* AKTruck.swift in Sources */,
 				415752CF2128D224005FCF18 /* AKAutomobile.swift in Sources */,
 				415752B62128B768005FCF18 /* AppDelegate.swift in Sources */,

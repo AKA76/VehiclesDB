@@ -51,7 +51,7 @@ class VehicleViewController: UITableViewController {
         Alamofire.request(url, method: .get, parameters: nil).responseJSON {
             response in
             if response.result.isSuccess {
-                print("Success! The vehicle data was got.")
+                print("Success! Vehicles data was got.")
                 let vehiclesJSON : JSON = JSON(response.result.value!)
                 self.updateVehiclesData(json: vehiclesJSON)
                 self.isDataImported = true

@@ -9,11 +9,15 @@
 import UIKit
 
 class AKVehiclesInfoViewController: UIViewController {
+    
+    @IBOutlet weak var someDataLabel: UILabel!
+    
+    var vehicleDetails : AKTruck?
    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-
+        someDataLabel.text = vehicleDetails?.model        
     }
 
     override func didReceiveMemoryWarning() {

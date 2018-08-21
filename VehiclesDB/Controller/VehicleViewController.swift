@@ -19,7 +19,8 @@ class VehicleViewController: UITableViewController {
     var carsArray = [AKCar]()
     let VEHICLESDB_URL = "http://azcltd.com/testTask/iOS/list.json"
     let VEHICLESIMG_URL = "http://azcltd.com/testTask/iOS/"
-    
+
+    var someData : String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +38,32 @@ class VehicleViewController: UITableViewController {
         super.didReceiveMemoryWarning()
 
     }
-    //MARK: - NavigationBarButton
-    
+    //MARK: - Choose vehicle type
+    func getVehicleType(vehicleType: Int) -> Array<Any> {
+        switch (vehicleType) {
+        case 0:
+            return trucksArray
+        case 1:
+            return carsArray
+        default:
+            return bikesArray
+        }
+
+    }
+    //MARK: - Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        navigationItem.backBarButtonItem = backButton
+        if let cell = sender as? UITableViewCell {
+            let indexPathRow = tableView.indexPath(for: cell)!.row
+            if segue.identifier == "detailInfoSegue"{
+                let vc = segue.destination as! AKVehiclesInfoViewController
+                vc.vehicleDetails = trucksArray[indexPathRow]
+            }
+        }
+
+    }
     //MARK: - Networking
     func getVehiclesData(url:(String)) {
         Alamofire.request(url, method: .get, parameters: nil).responseJSON {
@@ -106,6 +131,7 @@ class VehicleViewController: UITableViewController {
     }
     
     //MARK : - TableView Datasource Methods
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return itemArray.count
     }
@@ -113,14 +139,8 @@ class VehicleViewController: UITableViewController {
         return itemArray[section]
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch (section) {
-        case 0:
-            return trucksArray.count
-        case 1:
-            return carsArray.count
-        default:
-            return bikesArray.count
-        }
+        let vehicleTypeArray =  getVehicleType(vehicleType: section)
+        return vehicleTypeArray.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath ) -> UITableViewCell {
 
@@ -144,13 +164,13 @@ class VehicleViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    
     }
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         
         return true
     }
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-
     }
     override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
         if sourceIndexPath.section == proposedDestinationIndexPath.section {

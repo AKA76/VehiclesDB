@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  VehiclesViewController.swift
 //  VehiclesDB
 //
 //  Created by Andrei Kucherenko on 19/08/2018.
@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class VehicleViewController: UITableViewController {
+class VehiclesViewController: UITableViewController {
     
     var isDataImported : Bool = false
     var itemArray = ["Trucks", "Cars", "Bikes"]
@@ -50,6 +50,7 @@ class VehicleViewController: UITableViewController {
         }
 
     }
+    
     //MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backButton = UIBarButtonItem()
@@ -57,9 +58,16 @@ class VehicleViewController: UITableViewController {
         navigationItem.backBarButtonItem = backButton
         if let cell = sender as? UITableViewCell {
             let indexPathRow = tableView.indexPath(for: cell)!.row
-            if segue.identifier == "detailInfoSegue"{
-                let vc = segue.destination as! AKVehiclesInfoViewController
+            if segue.identifier == "truckDetailsSegue" {
+                let vc = segue.destination as! AKTruckInfoViewController
                 vc.vehicleDetails = trucksArray[indexPathRow]
+            } else  if segue.identifier == "carDetailsSegue" {
+               let vc = segue.destination as! AKCarInfoViewController
+               vc.vehicleDetails = carsArray[indexPathRow]
+            } else if segue.identifier == "bikeDetailsSegue" {
+                let vc = segue.destination as! AKBikeInfoViewController
+                vc.vehicleDetails = bikesArray[indexPathRow]
+
             }
         }
 
@@ -130,7 +138,7 @@ class VehicleViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    //MARK : - TableView Datasource Methods
+    //MARK: - TableView Datasource Methods
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return itemArray.count
@@ -146,24 +154,28 @@ class VehicleViewController: UITableViewController {
 
         let cell : UITableViewCell =
             tableView.dequeueReusableCell (withIdentifier: "VehiclesItemCell", for: indexPath)
+        let vehicle = getVehicleType(vehicleType: indexPath.section) as! Array<AKVehicle>
+        cell.textLabel?.text = vehicle[indexPath.row].model
+        cell.detailTextLabel?.text = vehicle[indexPath.row].manufacturer
         
-        if (indexPath.section == 0) {
-            cell.textLabel?.text = trucksArray[indexPath.row].model
-            cell.detailTextLabel?.text = trucksArray[indexPath.row].manufacturer
-        }else if (indexPath.section == 1 ) {
-            cell.textLabel?.text = carsArray[indexPath.row].model
-            cell.detailTextLabel?.text = carsArray[indexPath.row].manufacturer
-        }else{
-            cell.textLabel?.text = bikesArray[indexPath.row].model
-            cell.detailTextLabel?.text = bikesArray[indexPath.row].manufacturer
-        }
-
         return cell
     }
-    //MARK : - TableView Delegate Methods
-    
+    //MARK: - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 0 {
+            let vc = AKTruckInfoViewController()
+            vc.vehicleDetails = trucksArray[indexPath.row]
+            performSegue(withIdentifier: "truckDetailsSegue", sender: tableView.cellForRow(at: indexPath))
+        } else  if indexPath.section == 1 {
+            performSegue(withIdentifier: "carDetailsSegue", sender: tableView.cellForRow(at: indexPath))
+        } else if indexPath.section == 2 {
+            let vc = AKBikeInfoViewController()
+            vc.vehicleDetails = bikesArray[indexPath.row]
+            performSegue(withIdentifier: "bikeDetailsSegue", sender: tableView.cellForRow(at: indexPath))
+        }
+
     
     }
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -174,6 +186,7 @@ class VehicleViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
         if sourceIndexPath.section == proposedDestinationIndexPath.section {
+            
             switch (sourceIndexPath.section) {
             case 0:
                 let movedObject = self.trucksArray[sourceIndexPath.row]

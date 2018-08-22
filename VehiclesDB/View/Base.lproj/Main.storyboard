@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Vehicles List-->
+        <!--VehiclesListViewController-->
         <scene sceneID="xZG-OX-4mb">
             <objects>
-                <tableViewController id="eKg-YC-nu9" customClass="VehicleViewController" customModule="VehiclesDB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="eKg-YC-nu9" userLabel="VehiclesListViewController" customClass="VehiclesViewController" customModule="VehiclesDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YxB-gf-F8W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,9 +43,6 @@
                                     </subviews>
                                     <color key="tintColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="0I4-5G-E9c" kind="show" identifier="truckDetailsSegue" id="ezH-xh-gjq"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -59,16 +56,17 @@
                     <connections>
                         <segue destination="yLW-Ym-xX2" kind="show" identifier="bikeDetailsSegue" id="fE4-Vd-dZr"/>
                         <segue destination="Lcr-45-d5p" kind="show" identifier="carDetailsSegue" id="1b9-6n-QgY"/>
+                        <segue destination="0I4-5G-E9c" kind="show" identifier="truckDetailsSegue" id="9GY-h9-lh9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyc-fR-P2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1111" y="134"/>
         </scene>
-        <!--VehiclesInfoView-->
+        <!--TruckInfoViewController-->
         <scene sceneID="XAW-DB-EDm">
             <objects>
-                <viewController id="0I4-5G-E9c" userLabel="VehiclesInfoView" customClass="AKVehiclesInfoViewController" customModule="VehiclesDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0I4-5G-E9c" userLabel="TruckInfoViewController" customClass="AKTruckInfoViewController" customModule="VehiclesDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QyA-AA-9hu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,47 +78,145 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Truck" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMg-SL-qV4">
+                                <rect key="frame" x="76" y="295" width="209" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <color key="textColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274509803921" green="0.66666666666666663" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="I5v-NK-hqA"/>
                     </view>
                     <connections>
                         <outlet property="someDataLabel" destination="9Bu-qj-vma" id="35o-r7-h9f"/>
+                        <segue destination="CoM-Od-3Ap" kind="show" identifier="editTruckSegue" id="3Ba-ow-5et"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3at-w2-IeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2137" y="-442"/>
+            <point key="canvasLocation" x="2136.8000000000002" y="-442.12893553223392"/>
         </scene>
-        <!--View Controller-->
+        <!--TruckEditViewController-->
+        <scene sceneID="WHq-dD-A59">
+            <objects>
+                <viewController id="CoM-Od-3Ap" userLabel="TruckEditViewController" customClass="AKTruckEditViewController" customModule="VehiclesDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="87z-eE-FDJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Bj1-7D-NCH"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Truck Details" id="od7-5v-e0D">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="SRr-b6-56y">
+                            <connections>
+                                <action selector="saveTruckDetails:" destination="CoM-Od-3Ap" id="e5q-on-DbY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hEr-HY-uB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3733.5999999999999" y="-442.12893553223392"/>
+        </scene>
+        <!--CarEditViewController-->
+        <scene sceneID="wf5-yB-fEH">
+            <objects>
+                <viewController id="uUL-1L-zsY" userLabel="CarEditViewController" customClass="AKCarEditViewController" customModule="VehiclesDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j3Q-PZ-vKw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TkD-tj-IOx"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Car Details" id="ijS-En-RM8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wHw-X2-ccZ">
+                            <connections>
+                                <action selector="saveCarDetails:" destination="uUL-1L-zsY" id="1c3-gG-1J6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r84-rc-s3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4465" y="134"/>
+        </scene>
+        <!--BikeInfoViewController-->
         <scene sceneID="hKg-6a-zbi">
             <objects>
-                <viewController id="yLW-Ym-xX2" sceneMemberID="viewController">
+                <viewController id="yLW-Ym-xX2" userLabel="BikeInfoViewController" customClass="AKBikeInfoViewController" customModule="VehiclesDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zz8-0q-noF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bike" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCh-Bh-GgO">
+                                <rect key="frame" x="84" y="243" width="209" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <color key="textColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="KZC-D7-30X"/>
                     </view>
+                    <connections>
+                        <segue destination="3Mv-ke-t5i" kind="show" identifier="editBikeSegue" id="T4g-oO-qpw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nil-l3-iuf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2137" y="506"/>
+            <point key="canvasLocation" x="2137" y="634"/>
         </scene>
-        <!--View Controller-->
+        <!--CarInfoViewController-->
         <scene sceneID="rXr-BG-cFs">
             <objects>
-                <viewController id="Lcr-45-d5p" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="n3b-3I-U15">
+                <viewController id="Lcr-45-d5p" userLabel="CarInfoViewController" customClass="AKCarInfoViewController" customModule="VehiclesDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n3b-3I-U15" customClass="AKB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Car" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vF-J4-dMc">
+                                <rect key="frame" x="83" y="283" width="209" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <color key="textColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FIF-q7-yY9"/>
                     </view>
+                    <connections>
+                        <segue destination="uUL-1L-zsY" kind="show" identifier="editCarSegue" id="bVJ-C2-SfB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etO-CI-WxB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2876" y="24"/>
+            <point key="canvasLocation" x="2897" y="134"/>
+        </scene>
+        <!--BikeEditViewController-->
+        <scene sceneID="aWA-TY-Lrn">
+            <objects>
+                <viewController id="3Mv-ke-t5i" userLabel="BikeEditViewController" customClass="AKBikeEditViewController" customModule="VehiclesDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jVU-gS-qyO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UjV-fS-j3K"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Bike Details" id="3Uc-e2-N2k">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Bs0-eO-wbu">
+                            <connections>
+                                <action selector="saveBikeDetails:" destination="3Mv-ke-t5i" id="Des-Ed-LeZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQn-CQ-Srh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3628" y="634"/>
         </scene>
         <!--VehiclesDB-->
         <scene sceneID="lOa-vF-oNX">

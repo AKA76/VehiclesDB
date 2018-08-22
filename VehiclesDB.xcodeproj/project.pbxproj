@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		415752B62128B768005FCF18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752B52128B768005FCF18 /* AppDelegate.swift */; };
-		415752B82128B768005FCF18 /* VehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752B72128B768005FCF18 /* VehicleViewController.swift */; };
+		415752B82128B768005FCF18 /* VehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752B72128B768005FCF18 /* VehiclesViewController.swift */; };
 		415752BB2128B768005FCF18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415752B92128B768005FCF18 /* Main.storyboard */; };
 		415752BD2128B76D005FCF18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 415752BC2128B76D005FCF18 /* Assets.xcassets */; };
 		415752C02128B76D005FCF18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 415752BE2128B76D005FCF18 /* LaunchScreen.storyboard */; };
@@ -18,7 +18,12 @@
 		415752D12128D2B6005FCF18 /* AKTruck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752D02128D2B6005FCF18 /* AKTruck.swift */; };
 		415752D32128D32B005FCF18 /* AKCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752D22128D32B005FCF18 /* AKCar.swift */; };
 		415752D52128D52F005FCF18 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 415752D42128D52F005FCF18 /* Default-568h@2x.png */; };
-		415752D7212A3268005FCF18 /* AKVehiclesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752D6212A3268005FCF18 /* AKVehiclesInfoViewController.swift */; };
+		415752D7212A3268005FCF18 /* AKTruckInfoViewControllerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752D6212A3268005FCF18 /* AKTruckInfoViewControllerr.swift */; };
+		415752F7212C17FE005FCF18 /* AKBikeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752F6212C17FE005FCF18 /* AKBikeInfoViewController.swift */; };
+		415752F9212DFDE4005FCF18 /* AKCarInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752F8212DFDE4005FCF18 /* AKCarInfoViewController.swift */; };
+		415752FB212E01E7005FCF18 /* AKTruckEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752FA212E01E7005FCF18 /* AKTruckEditViewController.swift */; };
+		415752FD212E01F8005FCF18 /* AKCarEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752FC212E01F8005FCF18 /* AKCarEditViewController.swift */; };
+		415752FF212E0209005FCF18 /* AKBikeEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415752FE212E0209005FCF18 /* AKBikeEditViewController.swift */; };
 		73FBF34C81BABBB757F19092 /* Pods_VehiclesDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C8CA44C05A6F8DD84259FC /* Pods_VehiclesDB.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +31,7 @@
 		399EA3588092672AE2DA963A /* Pods-VehiclesDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VehiclesDB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VehiclesDB/Pods-VehiclesDB.debug.xcconfig"; sourceTree = "<group>"; };
 		415752B22128B768005FCF18 /* VehiclesDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehiclesDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		415752B52128B768005FCF18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		415752B72128B768005FCF18 /* VehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewController.swift; sourceTree = "<group>"; };
+		415752B72128B768005FCF18 /* VehiclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesViewController.swift; sourceTree = "<group>"; };
 		415752BA2128B768005FCF18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		415752BC2128B76D005FCF18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		415752BF2128B76D005FCF18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,7 +42,12 @@
 		415752D02128D2B6005FCF18 /* AKTruck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKTruck.swift; sourceTree = "<group>"; };
 		415752D22128D32B005FCF18 /* AKCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCar.swift; sourceTree = "<group>"; };
 		415752D42128D52F005FCF18 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		415752D6212A3268005FCF18 /* AKVehiclesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKVehiclesInfoViewController.swift; sourceTree = "<group>"; };
+		415752D6212A3268005FCF18 /* AKTruckInfoViewControllerr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKTruckInfoViewControllerr.swift; sourceTree = "<group>"; };
+		415752F6212C17FE005FCF18 /* AKBikeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBikeInfoViewController.swift; sourceTree = "<group>"; };
+		415752F8212DFDE4005FCF18 /* AKCarInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCarInfoViewController.swift; sourceTree = "<group>"; };
+		415752FA212E01E7005FCF18 /* AKTruckEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKTruckEditViewController.swift; sourceTree = "<group>"; };
+		415752FC212E01F8005FCF18 /* AKCarEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKCarEditViewController.swift; sourceTree = "<group>"; };
+		415752FE212E0209005FCF18 /* AKBikeEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKBikeEditViewController.swift; sourceTree = "<group>"; };
 		84C8CA44C05A6F8DD84259FC /* Pods_VehiclesDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VehiclesDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A0D791361EE2CC0F01C77A /* Pods-VehiclesDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VehiclesDB.release.xcconfig"; path = "Pods/Target Support Files/Pods-VehiclesDB/Pods-VehiclesDB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,8 +129,13 @@
 			isa = PBXGroup;
 			children = (
 				415752B52128B768005FCF18 /* AppDelegate.swift */,
-				415752B72128B768005FCF18 /* VehicleViewController.swift */,
-				415752D6212A3268005FCF18 /* AKVehiclesInfoViewController.swift */,
+				415752B72128B768005FCF18 /* VehiclesViewController.swift */,
+				415752D6212A3268005FCF18 /* AKTruckInfoViewControllerr.swift */,
+				415752FA212E01E7005FCF18 /* AKTruckEditViewController.swift */,
+				415752F8212DFDE4005FCF18 /* AKCarInfoViewController.swift */,
+				415752FC212E01F8005FCF18 /* AKCarEditViewController.swift */,
+				415752F6212C17FE005FCF18 /* AKBikeInfoViewController.swift */,
+				415752FE212E0209005FCF18 /* AKBikeEditViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,12 +264,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				415752B82128B768005FCF18 /* VehicleViewController.swift in Sources */,
+				415752F7212C17FE005FCF18 /* AKBikeInfoViewController.swift in Sources */,
+				415752B82128B768005FCF18 /* VehiclesViewController.swift in Sources */,
 				415752CB2128D09D005FCF18 /* AKVehicle.swift in Sources */,
+				415752F9212DFDE4005FCF18 /* AKCarInfoViewController.swift in Sources */,
 				415752CD2128D1A1005FCF18 /* AKBike.swift in Sources */,
-				415752D7212A3268005FCF18 /* AKVehiclesInfoViewController.swift in Sources */,
+				415752D7212A3268005FCF18 /* AKTruckInfoViewControllerr.swift in Sources */,
 				415752D12128D2B6005FCF18 /* AKTruck.swift in Sources */,
+				415752FD212E01F8005FCF18 /* AKCarEditViewController.swift in Sources */,
 				415752CF2128D224005FCF18 /* AKAutomobile.swift in Sources */,
+				415752FF212E0209005FCF18 /* AKBikeEditViewController.swift in Sources */,
+				415752FB212E01E7005FCF18 /* AKTruckEditViewController.swift in Sources */,
 				415752B62128B768005FCF18 /* AppDelegate.swift in Sources */,
 				415752D32128D32B005FCF18 /* AKCar.swift in Sources */,
 			);

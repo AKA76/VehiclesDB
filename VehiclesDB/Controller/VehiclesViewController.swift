@@ -139,12 +139,28 @@ class VehiclesViewController: UITableViewController {
     }
     
     //MARK: - TableView Datasource Methods
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return itemArray.count
     }
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return itemArray[section]
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return itemArray[section]
+//    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let header = tableView.dequeueReusableCell(withIdentifier: "userheader")
+//        let headerName = itemArray[section]
+//        header?.textLabel?.text = headerName
+//        header?.contentView.backgroundColor = UIColor.lightGray
+        let vw = UIView()
+        let header = itemArray[section]
+        let sectionLabel = UILabel(frame: CGRectFromString(header))
+        sectionLabel.textAlignment = NSTextAlignment.center
+        vw.backgroundColor = UIColor.lightGray
+       
+        sectionLabel.textColor = UIColor.blue
+        sectionLabel.text = header
+        vw.addSubview(sectionLabel)
+        
+        return vw
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let vehicleTypeArray =  getVehicleType(vehicleType: section)
@@ -160,6 +176,7 @@ class VehiclesViewController: UITableViewController {
         
         return cell
     }
+    
     //MARK: - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

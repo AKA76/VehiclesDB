@@ -10,17 +10,27 @@ import UIKit
 
 class AKBikeInfoViewController: UIViewController {
 
-    var vehicleDetails : AKBike?
+    var bikeDetails : AKBike?
     
+    @IBOutlet weak var manufacturer: UILabel!
+    @IBOutlet weak var model: UILabel!
+    @IBOutlet weak var horsePower: UILabel!
+    @IBOutlet weak var bikeType: UILabel!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-        //print(vehicleDetails.type)
-        self.navigationItem.title = "Bike Details"
-       // someDataLabel.text = vehicleDetails?.model
-
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        manufacturer.text = bikeDetails?.manufacturer
+        model.text = bikeDetails?.model
+        horsePower.text = String(bikeDetails!.horsePower)
+        bikeType.text = bikeDetails?.bikeType
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -37,6 +47,11 @@ class AKBikeInfoViewController: UIViewController {
         let backButton = UIBarButtonItem()
         backButton.title = "Cancel"
         navigationItem.backBarButtonItem = backButton
+        let editBikeViewController = segue.destination as! AKBikeEditViewController
+        editBikeViewController.delegate = self
+        editBikeViewController.navigationItem.title = "Edit Bike Details"
+        editBikeViewController.bikeDetails = self.bikeDetails
+
     }
     
 }

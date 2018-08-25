@@ -7,15 +7,12 @@
 //
 
 import UIKit
-protocol returnEditValue {
-//    var editedTruckDetails : AKTruck?
-    func changedTruckDetails(editedTruckDetails: AKTruck?) -> AKTruck?
-}
 
-class AKTruckInfoViewController: UIViewController, returnEditValue {
+class AKTruckInfoViewController: UIViewController {
     
-    var vehicleDetails : AKTruck?
-    var testPass : String?
+    var truckDetails : AKTruck?
+    var carDetails : AKCar?
+    var bikeDetails : AKBike?
     
     @IBOutlet weak var manufacturer: UILabel!
     @IBOutlet weak var model: UILabel!
@@ -27,19 +24,17 @@ class AKTruckInfoViewController: UIViewController, returnEditValue {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-        self.navigationItem.title = "Truck Details"
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        manufacturer.text = vehicleDetails?.manufacturer
-        model.text = vehicleDetails?.model
-        horsePower.text = String(vehicleDetails!.horsePower)
-        handDrive.text = vehicleDetails?.handDrive
-        seatsCount.text = String(vehicleDetails!.seatsCount)
-        carryingCapacityKg.text = String(vehicleDetails!.carryingCapacityKg)
+        manufacturer.text = truckDetails?.manufacturer
+        model.text = truckDetails?.model
+        horsePower.text = String(truckDetails!.horsePower)
+        handDrive.text = truckDetails?.handDrive
+        seatsCount.text = String(truckDetails!.seatsCount)
+        carryingCapacityKg.text = String(truckDetails!.carryingCapacityKg)
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,13 +53,13 @@ class AKTruckInfoViewController: UIViewController, returnEditValue {
         let backButton = UIBarButtonItem()
         backButton.title = "Cancel"
         navigationItem.backBarButtonItem = backButton
-        let vc = segue.destination as! AKTruckEditViewController
-        vc.delegate = self
-        vc.vehicleDetails = self.vehicleDetails
+        let editTruckViewControoler = segue.destination as! AKTruckEditViewController
+        editTruckViewControoler.delegate = self
+        editTruckViewControoler.navigationItem.title = "Edit Truck Details"
+        editTruckViewControoler.truckDetails = self.truckDetails
     }
     func changedTruckDetails(editedTruckDetails: AKTruck?) -> AKTruck? {
         return editedTruckDetails
     }
-
 
 }

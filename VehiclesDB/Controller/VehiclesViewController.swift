@@ -19,6 +19,7 @@ class VehiclesViewController: UITableViewController {
     var carsArray = [AKCar]()
     let VEHICLESDB_URL = "http://azcltd.com/testTask/iOS/list.json"
     let VEHICLESIMG_URL = "http://azcltd.com/testTask/iOS/"
+    let sectionColor = UIColor(red:0.16, green:0.67, blue:0.75, alpha:0.7)
 
     var someData : String!
 
@@ -59,18 +60,31 @@ class VehiclesViewController: UITableViewController {
         if let cell = sender as? UITableViewCell {
             let indexPathRow = tableView.indexPath(for: cell)!.row
             if segue.identifier == "truckDetailsSegue" {
-                let vc = segue.destination as! AKTruckInfoViewController
-                vc.vehicleDetails = trucksArray[indexPathRow]
+                let truckInfoViewController = segue.destination as! AKTruckInfoViewController
+                truckInfoViewController.truckDetails = trucksArray[indexPathRow]
+                truckInfoViewController.navigationItem.title = "Truck Details"
             } else  if segue.identifier == "carDetailsSegue" {
-               let vc = segue.destination as! AKCarInfoViewController
-               vc.vehicleDetails = carsArray[indexPathRow]
+                let carInfoViewController = segue.destination as! AKCarInfoViewController
+                carInfoViewController.carDetails = carsArray[indexPathRow]
+                carInfoViewController.navigationItem.title = "Car Details"
             } else if segue.identifier == "bikeDetailsSegue" {
-                let vc = segue.destination as! AKBikeInfoViewController
-                vc.vehicleDetails = bikesArray[indexPathRow]
-
+                let bikeInfoViewController = segue.destination as! AKBikeInfoViewController
+                bikeInfoViewController.bikeDetails = bikesArray[indexPathRow]
+                bikeInfoViewController.navigationItem.title = "Bike Details"
             }
         }
 
+        if segue.identifier == "truckAddSegue" {
+            let addTruckViewController = segue.destination as! AKTruckEditViewController
+            addTruckViewController.navigationItem.title = "New truck"
+        }else if segue.identifier == "carAddSegue" {
+            let addCarViewController = segue.destination as! AKCarEditViewController
+            addCarViewController.navigationItem.title = "New car"
+        }else if segue.identifier == "bikeAddBikeSegue" {
+            let addBikeViewController = segue.destination as! AKBikeEditViewController
+            addBikeViewController.navigationItem.title = "New bike"
+        }
+        
     }
     //MARK: - Networking
     func getVehiclesData(url:(String)) {
@@ -129,8 +143,6 @@ class VehiclesViewController: UITableViewController {
                     bike.images = fetchedImages
                 }
                 bikesArray.append(bike)
-
-            
             default:
                 print("Wrong vehicle type")
             }
@@ -142,25 +154,37 @@ class VehiclesViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return itemArray.count
     }
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return itemArray[section]
-//    }
+
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let header = tableView.dequeueReusableCell(withIdentifier: "userheader")
-//        let headerName = itemArray[section]
-//        header?.textLabel?.text = headerName
-//        header?.contentView.backgroundColor = UIColor.lightGray
-        let vw = UIView()
-        let header = itemArray[section]
-        let sectionLabel = UILabel(frame: CGRectFromString(header))
-        sectionLabel.textAlignment = NSTextAlignment.center
-        vw.backgroundColor = UIColor.lightGray
-       
-        sectionLabel.textColor = UIColor.blue
-        sectionLabel.text = header
-        vw.addSubview(sectionLabel)
+        let sectionHeader = UIView()
+        sectionHeader.backgroundColor = sectionColor
+        let sectionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 28))
+        sectionLabel.text = itemArray[section]
+        sectionLabel.textAlignment = .center
+        sectionLabel.textColor = UIColor.white
+        sectionHeader.addSubview(sectionLabel)
+        let addButton: UIButton = UIButton(frame: CGRect(x:tableView.frame.size.width-40, y:0, width:28, height:28))
+        addButton.titleLabel?.font = UIFont(name: "Helvetica Neue", size:28)
+        addButton.setTitle("+", for: .normal)
+        // Pass type of vehicle to function using tag parameter of UIButton
+        addButton.tag = section
+        addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+        sectionHeader.addSubview(addButton)
+        return sectionHeader
+    }
+    //MARK: - Add New Vehicle
+    @objc func addButtonTapped(sender: UIButton) {
+        let type = sender.tag
+        switch type {
+        case 0:
+            performSegue(withIdentifier: "truckAddSegue", sender: nil)
+        case 1:
+            performSegue(withIdentifier: "carAddSegue", sender: nil)
+        default:
+            performSegue(withIdentifier: "bikeAddSegue", sender: nil)
+        }
+        print("Add Vehicle type \(type)")
         
-        return vw
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let vehicleTypeArray =  getVehicleType(vehicleType: section)
@@ -182,17 +206,12 @@ class VehiclesViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if indexPath.section == 0 {
-            let vc = AKTruckInfoViewController()
-            vc.vehicleDetails = trucksArray[indexPath.row]
             performSegue(withIdentifier: "truckDetailsSegue", sender: tableView.cellForRow(at: indexPath))
         } else  if indexPath.section == 1 {
             performSegue(withIdentifier: "carDetailsSegue", sender: tableView.cellForRow(at: indexPath))
         } else if indexPath.section == 2 {
-            let vc = AKBikeInfoViewController()
-            vc.vehicleDetails = bikesArray[indexPath.row]
             performSegue(withIdentifier: "bikeDetailsSegue", sender: tableView.cellForRow(at: indexPath))
         }
-
     
     }
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {

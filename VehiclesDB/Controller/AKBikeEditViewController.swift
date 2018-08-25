@@ -10,10 +10,24 @@ import UIKit
 
 class AKBikeEditViewController: UIViewController {
 
-    var vehicleDetails : AKBike?
+    var bikeDetails : AKBike?
+    var delegate : AKBikeInfoViewController?
     
+    @IBOutlet weak var manufacturer: UITextField!
+    @IBOutlet weak var model: UITextField!
+    @IBOutlet weak var horsePower: UITextField!
+    @IBOutlet weak var bikeType: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let vehicle = bikeDetails {
+            manufacturer.text = vehicle.manufacturer
+            model.text = vehicle.model
+            horsePower.text = String(vehicle.horsePower)
+            bikeType.text = vehicle.bikeType
+        } else {
+            print("Bike nil")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +35,9 @@ class AKBikeEditViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func saveBikeDetails(_ sender: Any) {
+        if let delegate = self.delegate {
+            delegate.bikeDetails = self.bikeDetails
+        }
         navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }

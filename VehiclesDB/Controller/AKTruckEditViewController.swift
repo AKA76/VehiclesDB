@@ -8,10 +8,9 @@
 
 import UIKit
 
-
 class AKTruckEditViewController: UIViewController {
 
-    var vehicleDetails : AKTruck?
+    var truckDetails : AKTruck?
     var delegate : AKTruckInfoViewController?
     
     @IBOutlet weak var manufacturer: UITextField!
@@ -23,18 +22,21 @@ class AKTruckEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        manufacturer.text = vehicleDetails?.manufacturer
-        model.text = vehicleDetails?.model
-        horsePower.text = String(vehicleDetails!.horsePower)
-        handDrive.text = vehicleDetails?.handDrive
-        seatsCount.text = String(vehicleDetails!.seatsCount)
-        carryingCapacityKg.text = String(vehicleDetails!.carryingCapacityKg)
+        if let vehicle = truckDetails {
+        manufacturer.text = vehicle.manufacturer
+        model.text = vehicle.model
+        horsePower.text = String(vehicle.horsePower)
+        handDrive.text = vehicle.handDrive
+        seatsCount.text = String(vehicle.seatsCount)
+        carryingCapacityKg.text = String(vehicle.carryingCapacityKg)
+        } else {
+            print("Truck nil")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,8 +46,8 @@ class AKTruckEditViewController: UIViewController {
  
     @IBAction func saveTruckDetails(_ sender: Any) {
         if let delegate = self.delegate {
-//            delegate.changedTruckDetails(editedTruckDetails: vehicleDetails!)
-            delegate.testPass = "Test!"
+            truckDetails?.manufacturer = "Edited"
+            delegate.truckDetails = self.truckDetails
         }
         navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)

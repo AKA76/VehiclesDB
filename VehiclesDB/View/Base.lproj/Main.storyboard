@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3at-w2-IeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2136.8000000000002" y="-442.12893553223392"/>
+            <point key="canvasLocation" x="2136.5" y="-442.5"/>
         </scene>
         <!--TruckEditViewController-->
         <scene sceneID="WHq-dD-A59">
@@ -490,7 +490,7 @@
         <scene sceneID="rXr-BG-cFs">
             <objects>
                 <viewController id="Lcr-45-d5p" userLabel="CarInfoViewController" customClass="AKCarInfoViewController" customModule="VehiclesDB" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="n3b-3I-U15" customClass="AKB">
+                    <view key="view" contentMode="scaleToFill" id="n3b-3I-U15">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -706,7 +706,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="T4g-oO-qpw"/>
+        <segue reference="7mA-Jx-ZaN"/>
         <segue reference="bVJ-C2-SfB"/>
         <segue reference="3Ba-ow-5et"/>
     </inferredMetricsTieBreakers>

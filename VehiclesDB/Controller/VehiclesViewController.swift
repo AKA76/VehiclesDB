@@ -30,9 +30,11 @@ class VehiclesViewController: UITableViewController {
         if !isDataImported {
             print("Importing ...")
             getVehiclesData(url:VEHICLESDB_URL)
+            //
         }else {
             print ("Already imported!")
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,7 +118,8 @@ class VehiclesViewController: UITableViewController {
                 truck.seatsCount = vehicle.1["seatsCount"].intValue
                 truck.carryingCapacityKg = vehicle.1["carryingCapacityKg"].intValue
                 if let fetchedImages = vehicle.1["images"].arrayObject as? [String] {
-                    truck.images = fetchedImages
+                    truck.imagesURL = fetchedImages
+                    truck.imagesData = downloadImagesFromURL(baseURL: VEHICLESIMG_URL, imagesPath: fetchedImages)
                 }
                 trucksArray.append(truck)
             case "car":
@@ -129,7 +132,8 @@ class VehiclesViewController: UITableViewController {
                 car.seatsCount = vehicle.1["seatsCount"].intValue
                 car.doors = vehicle.1["doors"].intValue
                 if let fetchedImages = vehicle.1["images"].arrayObject as? [String] {
-                    car.images = fetchedImages
+                    car.imagesURL = fetchedImages
+                    car.imagesData = downloadImagesFromURL(baseURL: VEHICLESIMG_URL, imagesPath: fetchedImages)
                 }
                 carsArray.append(car)
             case "bike":
@@ -140,7 +144,8 @@ class VehiclesViewController: UITableViewController {
                 bike.horsePower = vehicle.1["horsePower"].intValue
                 bike.bikeType = vehicle.1["bikeType"].stringValue
                 if let fetchedImages = vehicle.1["images"].arrayObject as? [String] {
-                    bike.images = fetchedImages
+                    bike.imagesURL = fetchedImages
+                    bike.imagesData = downloadImagesFromURL(baseURL: VEHICLESIMG_URL, imagesPath: fetchedImages)
                 }
                 bikesArray.append(bike)
             default:
@@ -149,7 +154,29 @@ class VehiclesViewController: UITableViewController {
         }
         self.tableView.reloadData()
     }
-    
+    //MARK: - Download images
+    func downloadImagesFromURL(baseURL: String, imagesPath: Array<String>) -> Array<UIImage> {
+        var imagesData = [UIImage]()
+        for var imagePath in imagesPath {
+            // The image to dowload
+            imagePath="\(baseURL)\(imagePath)"
+            let remoteImageURL = URL(string: imagePath)!
+            // Download the image
+            Alamofire.request(remoteImageURL).responseData {
+                (response) in
+                if response.error == nil {
+                    print("\(response.result) = \(remoteImageURL)")
+                    // Show the downloaded image:
+                    if let data = UIImage(data: response.data!)   {
+                            imagesData.append(data)
+                    }
+                }else {
+                    print(response.result)
+                }
+            }
+        }
+        return imagesData
+    }
     //MARK: - TableView Datasource Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
         return itemArray.count

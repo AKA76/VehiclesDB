@@ -11,8 +11,6 @@ import UIKit
 class AKTruckInfoViewController: UIViewController {
     
     var truckDetails : AKTruck?
-    var carDetails : AKCar?
-    var bikeDetails : AKBike?
     
     @IBOutlet weak var manufacturer: UILabel!
     @IBOutlet weak var model: UILabel!
@@ -24,6 +22,7 @@ class AKTruckInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,5 +60,5 @@ class AKTruckInfoViewController: UIViewController {
     func changedTruckDetails(editedTruckDetails: AKTruck?) -> AKTruck? {
         return editedTruckDetails
     }
-
+    
 }
